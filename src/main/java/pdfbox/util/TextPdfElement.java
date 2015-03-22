@@ -66,7 +66,7 @@ public class TextPdfElement implements PdfElement {
 	}
 	
 	/**
-	 * Escreve a linha no documento, é aqui onde decide-se qual a posição que o texto vai ser impresso. Alinhamento,
+	 * Escreve a linha no documento, Ã© aqui onde decidee-se qual a posiÃ§Ã£o que o texto vai ser impresso. Alinhamento,
 	 * altura de linha, etc.
 	 */
 	@Override

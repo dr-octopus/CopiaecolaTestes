@@ -28,7 +28,7 @@ public class ImprimeParagrafos {
 				System.out.println("Nome: " + f.getFontDescriptor().getFontName() + " | Tamanho: " + size);
 			}
 			
-			// Imprime par·grafos
+			// Imprime par√°grafos
 			PDFTextStripper stripper = new PDFTextStripper();
 			
 			stripper.setParagraphEnd("_pEnds_");

@@ -9,7 +9,7 @@ public class DivideLinhas {
 	public static void main(String[] args) {}
 	
 	public static String[] removeLinhasPequenas(String str) {
-		// Remove as linhas menores que 50 caracteres (tÌtulos) e que n√£o sejam finais de par·grafos.
+		// Remove as linhas menores que 50 caracteres (t√≠tulos) e que n√£o sejam finais de par√°grafos.
 		StringBuilder sBuilder = new StringBuilder();
 		Pattern p = Pattern.compile("^.*[.:;!?]\\s*$");
 		for (String s : str.split("[\n|\r]")) {
@@ -21,7 +21,7 @@ public class DivideLinhas {
 		}
 		str = sBuilder.toString();
 		
-		// Separa o texto em par·grafos
+		// Separa o texto em par√°grafos
 		String regex = "([.:;!?])\\s*\n";
 		String textoTag = str.replaceAll(regex, "$1<pEnds>");
 		String[] paragrafos = textoTag.replaceAll("[\n|\r]", "").split("<pEnds>");

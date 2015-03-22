@@ -1,4 +1,4 @@
-package javafx.bean;
+package jsf.bean;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
@@ -8,7 +8,7 @@ import javax.faces.bean.ManagedBean;
 public class IndexMB {
 	
 	public void index() {
-		System.out.println("Passou no índex!");
+		
 	}
 	
 }

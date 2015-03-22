@@ -4,14 +4,14 @@ public class DivideParagrafos {
 	
 	public static void main(String[] args) {
 		
-		String texto = "Este é um paragrafo que termina com ponto final. \n"
-		        + "Este é um paragrafo que termina com ponto de exclamação! \n"
-		        + "Este é um paragrafo que termina com ponto de interrogação? \n"
-		        + "Esta é uma linha que termina com vírgula, \n" + "Este é um paragrafo que termina com dois pontos: \n";
+		String texto = "Este ï¿½ um paragrafo que termina com ponto final. \n"
+		        + "Este ï¿½ um paragrafo que termina com ponto de exclamaï¿½ï¿½o! \n"
+		        + "Este ï¿½ um paragrafo que termina com ponto de interrogaï¿½ï¿½o? \n"
+		        + "Esta ï¿½ uma linha que termina com vï¿½rgula, \n" + "Este ï¿½ um paragrafo que termina com dois pontos: \n";
 		
 		// Exemplo 01:
-		// Divide a string encontrando os parágrafos, que são delimitados pelas sequências: '. \n', ': \n', '! \n' e '? \n'
-		// Na divisão, os pontos finais dos parágrafos são excluídos.
+		// Divide a string encontrando os parÃ¡grafos, que sÃ£o delimitados pelas sequÃªncias: '. \n', ': \n', '! \n' e '? \n'
+		// Na divisÃ§Ã£o, os pontos finais dos parÃ¡grafos sÃ£o excluÃ­dos.
 		
 		String regex = "[.:!?]\\s\n";
 		String[] textoSplitado = texto.split(regex);
@@ -26,9 +26,9 @@ public class DivideParagrafos {
 		System.out.println("\n");
 		
 		// Exemplo 02:
-		// Divide a string encontrando os parágrafos, que são delimitados pelas sequências: '. \n', ': \n', '! \n' e '?
+		// Divide a string encontrando os parÃ¡grafos, que sÃ£o delimitados pelas sequÃªncias: '. \n', ': \n', '! \n' e '?
 		// \n'
-		// Na divisão, os pontos finais dos parágrafos não são excluídos.
+		// Na divisÃ£o, os pontos finais dos parÃ¡grafos nÃ£o sÃ£o excluÃ­dos.
 		
 		regex = "([.:!?])\\s\n";
 		String textoReplaceado = texto.replaceAll(regex, "$1<pEnds>");

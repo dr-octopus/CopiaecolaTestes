@@ -7,17 +7,17 @@ import java.util.List;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 
 /**
- * Classe que representa um par·grafo com uma largura m·xima definida. …â respons·vel pelas quebras de linha.
+ * Classe que representa um par√°grafo com uma largura m√°xima definida. √â respons√°vel pelas quebras de linha.
  * 
  * @author Thor
  * @see <a href="http://www.just-thor.com/2014/04/07/how-to-wrap-text-in-pdfbox/">Fonte</a>
  */
 public class Paragraph {
 	
-	/** Largura m·xima do par·grafo */
+	/** Largura m√°xima do par√°grafo */
 	private final int width;
 	
-	/** Texto do par·grado */
+	/** Texto do par√°grado */
 	private final String text;
 	
 	private final PDFont font;
@@ -32,7 +32,7 @@ public class Paragraph {
 	}
 	
 	/**
-	 * Quebra o texto em linhas, baseado na largura m·xima. Quando excede a largura, o texto È quebrado para a prÛxima
+	 * Quebra o texto em linhas, baseado na largura m√°xima. Quando excede a largura, o texto √© quebrado para a pr√≥xima
 	 * linha.
 	 * 
 	 * @return

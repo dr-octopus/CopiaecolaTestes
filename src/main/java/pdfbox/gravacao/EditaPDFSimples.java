@@ -22,7 +22,7 @@ public class EditaPDFSimples {
 			PDFont font = PDType1Font.HELVETICA_BOLD;
 			PDPageContentStream contentStream = new PDPageContentStream(doc, paginaToEdit, true, true);
 			
-			// Inicia ediÁ„o
+			// Inicia edi√ß√£oo
 			contentStream.beginText();
 			contentStream.setFont(font, 12);
 			contentStream.moveTextPositionByAmount(100, 100);
@@ -30,7 +30,7 @@ public class EditaPDFSimples {
 			contentStream.endText();
 			contentStream.close();
 			
-			doc.save("src/main/resources/PDFOutput/boot2.pdf"); // DiretÛrio onde ser· salvo o arquivo, novo ou
+			doc.save("src/main/resources/PDFOutput/boot2.pdf"); // Diret√≥rio onde ser√° salvo o arquivo, novo ou
 			                                                    // existente
 			doc.close();
 		} catch (IOException e) {
