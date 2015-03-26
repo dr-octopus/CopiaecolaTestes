@@ -1,6 +1,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 
   Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<ui:composition template="template.xhtml"
+<ui:composition template="_template.xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:i="http://www.idc.org/fileUpload"
@@ -10,11 +10,24 @@
 		<div class="conteudo">
 			<h1>Copia e cola Testes</h1>
 			<div class="hr"></div>
-			<p>Conteúdos:</p>
-			<div class="menu">
-				<ul>
-					<li><a href="javaWebStart.jnlp">Java Web Start</a></li>
-				</ul>
+			<h4 class="lighter">Conteúdos:</h4>
+			<div class="space"></div>
+			<div class="accordion">
+				<div class="ac-item">
+					<div class="ac-header lighter"><h4>Java Web Start</h4></div>
+					<div class="ac-content">
+						<p>
+							O link aponta para o arquivo de configurações .jnlp (Java Network Launcher Protocol) e será iniciado o download do mesmo.
+							Ao executar o arquivo, será requisitado o .jar correspondente para o servidor no caminho apontado pelo .jnlp. Então o mesmo
+							verificará caso haja uma nova atualização para o .jar e o baixará, em seguida, o .jar será executado.
+						</p>
+						<div class="menu">
+							<ul>
+								<li><a href="javaWebStart.jnlp">Download .jnlp</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</ui:define>

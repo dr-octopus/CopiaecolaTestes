@@ -1,18 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<jnlp spec="1.0+"
-	codebase="http://localhost:8080/"
-	href="javaWebStart.jnlp">
-	
+<jnlp spec="1.0+" codebase="http://localhost:8081/" href="javaWebStart.jnlp">
+
+	<!-- LOCAL DO .JAR EXECUTÁVEL NO SERVIDOR -->
+	<resources>
+		<j2se version="1.3+" />
+		<jar href="webJars/AplicacaoDesktop.jar" />
+	</resources>
+
+	<!-- INFORMAÇÕES GERAIS -->
 	<information>
 		<title>Copia e Cola - Java Web Start</title>
 		<vendor>Copia e cola</vendor>
 		<description>Procurando plágio em arquivos</description>
 	</information>
+
+	<!-- DECLARAÇÃO DAS PERMISSÕES -->
+	<security>
+		<all-permissions />
+	</security>
+
+	<!-- DEFINIÇÃO DA CLASSE MAIN (pacote.classe) -->
+	<application-desc main-class="javaWebStart.AplicacaoDesktop">
+	<!-- <param name="chave" value="valor" /> -->
+	</application-desc>
 	
-	<resources>
-		<j2se version="1.3+" />
-		<jar href="jwsJar/AplicacaoDesktop.jar" />
-	</resources>
+	<!-- CONFIGURAÇÃO PARA APPLETS -->
+	<applet-desc documentBase="http://localhost:8081/" name="AplicacaoDesktop"
+		main-class="javaWebStart.AplicacaoDesktop" width="300" height="200">
+		<!-- <param name="chave" value="valor" /> -->
+	</applet-desc>
 	
-	<application-desc main-class="AplicacaoDesktop" />
 </jnlp>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Created-By: Luiz Felipe Nazari
+Name: javaWebStart
+Implementation-Vendor: Copia e Cola Testes
+Implementation-Title: Teste Java Web Start
+Implementation-Version: 1.0
+Specification-Vendor: Copia e Cola Testes spec
+Specification-Title: Teste Java Web Start spec
+Specification-Version: 1.0s
+Class-Path: 
