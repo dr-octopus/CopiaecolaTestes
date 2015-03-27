@@ -3,26 +3,43 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>CopiaecolaTestes</groupId>
 	<artifactId>CopiaecolaTestes</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<packaging>war</packaging>
 
 	<build>
+<!-- 	Para customizar o nome do .war -->
+<!-- 	<finalName>copiaecolateste</finalName> -->
+		
+		<!-- Filtros para a compilação do maven. 'user.home' é uma propriedade padrão do computador. -->
+		<!-- 'name-file-properties' é especificado pelos <profiles> configurados para o maven. -->
+		<filters>
+			<filter>${user.home}/${name-file-properties}</filter>
+		</filters>
+<!-- 		<resources> -->
+<!-- 			<resource> -->
+<!-- 				<directory>${basedir}/src/main/resources</directory> -->
+<!-- 				<filtering>true</filtering> -->
+<!-- 			</resource> -->
+<!-- 		</resources> -->
+		
 		<testSourceDirectory>test/main/java</testSourceDirectory>
+		
 		<plugins>
 			<plugin>
-				<artifactId>maven-war-plugin</artifactId>
-				<version>2.4</version>
-				<configuration>
-					<warSourceDirectory>WebContent</warSourceDirectory>
-					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
+				<version>3.2</version>
 				<configuration>
 					<source>1.8</source>
 					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.6</version>
+				<configuration>
+					<filteringDeploymentDescriptors>true</filteringDeploymentDescriptors>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
 		</plugins>
@@ -52,12 +69,23 @@
 			<artifactId>pdfbox</artifactId>
 			<version>1.8.8</version>
 		</dependency>
-
-
+		
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<version>1.16.2</version>
 		</dependency>
 	</dependencies>
+	
+	<profiles>
+		<profile>
+			<id>desenvolvimento</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<name-file-properties>copiaecolateste.properties</name-file-properties>
+			</properties>
+		</profile>
+	</profiles>
 </project>
