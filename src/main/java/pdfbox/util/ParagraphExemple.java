@@ -16,10 +16,7 @@ public class ParagraphExemple {
 	
 	public static void main(String[] args) {
 		
-		String texto = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et "
-		        + "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "
-		        + "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
-		        + "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+		String texto = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et " + "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea " + "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " + "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 		
 		File pdf = new File("src/main/resources/PDFInput/boot.pdf");
 		PDDocument doc = null;
@@ -29,20 +26,33 @@ public class ParagraphExemple {
 		Color color = new Color(16225054);
 		
 		try {
+			
+			// ...
+			// Criar o documento, páginas e configurar fontes.
+			
+			// Carrega o documento e a página.
 			doc = PDDocument.load(pdf);
 			paginaToEdit = ( PDPage ) doc.getDocumentCatalog().getAllPages().get(1);
 			
+			// Cria-se um novo parágrafo, configurando a fonte e
+			// o comprimento máximo das linhas que irá ocupar.
 			Paragraph paragraph = new Paragraph(300, font, fontSize, texto);
 			PDPageContentStream contentStream = new PDPageContentStream(doc, paginaToEdit, true, false);
 			
-			// posi��o inicial
+			// Define a posição Y inicial.
 			float initY = 0f;
+			
+			// Percorre as linhas divididas do parágrafo e grava-as.
+			// Precisa configurar manualmente as posições.
 			for (String line : paragraph.getLines()) {
 				new TextPdfElement(line, font, fontSize, color, 0.8f, initY, TextPdfElement.TextAlignment.LEFT).draw(
-				        contentStream, new PDRectangle(500, 550));
+				    contentStream, new PDRectangle(500, 550));
 				
 				initY += 0.15f;
 			}
+			
+			// Salvar o arquivo.
+			// ...
 			
 			contentStream.close();
 			doc.save("src/main/resources/PDFOutput/test.pdf");

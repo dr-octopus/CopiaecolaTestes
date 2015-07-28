@@ -22,7 +22,7 @@ public class SegurancaUtils {
 	 * @Algorítmo MD5
 	 * @Nível 128-bit (16-bytes)
 	 * @Tamanho 32 caracteres
-	 * @Descrição O algorítmo de encriptação MD5 gera hashs relativamente fracos. As principais vantagens são que é
+	 * @Descrição O algorítmo de criptografia MD5 gera hashs relativamente fracos. As principais vantagens são que é
 	 *            rápido e de fácil implementação. Os hashs gerados são suscetíveis a ataques de força-bruta e
 	 *            ataques de dicionários, que podem, facilmente, encontrar a palavra encriptada.<br>
 	 *            Além disso, não é resistente à colisões, o que significa que diferentes palavras podem gerar o mesmo
@@ -135,7 +135,7 @@ public class SegurancaUtils {
 	 * @Tamanho 40, 64, 96, 128 caracteres, respectivamente
 	 * @Descrição O algorítimo SHA (Secure Hash Algorithm) é uma família de funções para criptografar hashs. É similar
 	 *            ao MD5, porém, gera hashs mais fortes. Parte do princípio que hashs maiores representam maior
-	 *            segurança. Também não são resistentes à colisões, mas, neste caso, ocorremmuito raramente.
+	 *            segurança. Também não são resistentes à colisões, mas, neste caso, ocorrem muito raramente.
 	 * @param passwordToHash
 	 * @param salt
 	 * @return
@@ -169,7 +169,7 @@ public class SegurancaUtils {
 	 *            por iterações, mas não tão lentas a ponto de causar algum impacto ao usuário.<br>
 	 * <br>
 	 *            As iterações são denominadas fator de trabalho ou fator de segurança, e determinam o quão demorada a
-	 *            geração de hashs será. Como os compitadores tornam-se mais rápidos a cada ano, é interessante
+	 *            geração de hashs será. Como os computadores tornam-se mais rápidos a cada ano, é interessante
 	 *            atualizar esse valor quando necessário.
 	 * @param password
 	 * @return

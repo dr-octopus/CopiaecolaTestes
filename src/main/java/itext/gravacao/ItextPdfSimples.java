@@ -21,30 +21,32 @@ import com.lowagie.text.pdf.PdfWriter;
  */
 public class ItextPdfSimples {
 	
-	static String paragrafo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et "
-	        + "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea "
-	        + "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla "
-	        + "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
+	static String paragrafo = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et " + "dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea " + "commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla " + "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
 	
 	public static void main(String[] args) {
 		Document document = new Document();
 		
 		try {
+			// Referencia um ovo arquivo no diretório especificado.
 			File file = new File("src/main/resources/PDFOutput/test_itext.pdf");
+			
+			// Cria o stream de saída.
 			FileOutputStream fOut = new FileOutputStream(file);
 			
+			// Cria o gravador para o documento.
 			PdfWriter.getInstance(document, fOut);
 			
-			// open the document
+			// Abre o documento para edição.
 			document.open();
 			
-			Paragraph p1 = new Paragraph("Sample PDF CREATION USING IText\n");
+			// Cria um parágrafo, configurando a fonte, alinhamento e adicionando textos.
+			Paragraph p1 = new Paragraph("Este é um parágrafo simples\n");
 			Font paraFont = new Font(Font.HELVETICA);
 			p1.setAlignment(Paragraph.ALIGN_CENTER);
 			p1.setFont(paraFont);
 			p1.add(paragrafo);
 			
-			// add paragraph to document
+			// Adiciona o parágrafo ao documento.
 			document.add(p1);
 			
 			Paragraph p2 = new Paragraph("This is an example of a simple paragraph");
@@ -70,6 +72,7 @@ public class ItextPdfSimples {
 		} catch (DocumentException | IOException e) {
 			e.printStackTrace();
 		} finally {
+			// A gravação é findada ao fechar o documento.
 			document.close();
 		}
 		
